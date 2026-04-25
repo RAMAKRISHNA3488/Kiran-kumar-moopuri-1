@@ -18,7 +18,7 @@ export default function Hero() {
 
   return (
     // Main hero section — full viewport height, gradient background, overflow hidden for decorative elements
-    <section id="hero" className="hero-bg" style={{ minHeight: '100vh', paddingTop: 72, position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
+    <section id="hero" className="hero-bg" style={{ minHeight: '100vh', paddingTop: 'clamp(72px, 12vw, 100px)', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
 
       {/* ── Decorative Background Layer ────────────────────────────
           Contains blurred radial gradient blobs and a dotted grid.
@@ -68,7 +68,7 @@ export default function Hero() {
 
             {/* Description paragraph – short company value proposition */}
             <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-              style={{ color: '#6B7280', maxWidth: 520 }}>
+              className="hero-description" style={{ maxWidth: 520 }}>
               We deliver high-quality, scalable, and secure digital solutions, ensuring businesses achieve their project goals. Our tailored and efficient approaches ensure every project turns into a resounding success story.
             </motion.p>
 
@@ -109,10 +109,10 @@ export default function Hero() {
               className="hero-stats" style={{ display: 'flex', gap: 24 }}>
               {[['200+', 'Projects Done'], ['50+', 'Happy Clients'], ['5+', 'Yrs Experience']].map(([num, label]) => (
                 <div key={label} style={{ textAlign: 'center' }}>
-                  {/* Gradient number */}
-                  <div className="gradient-text" style={{ fontFamily: 'sans-serif', fontWeight: 900, fontSize: 26 }}>{num}</div>
-                  {/* Stat label */}
-                  <div style={{ color: '#6B7280', fontSize: 12, fontWeight: 500, marginTop: 2 }}>{label}</div>
+                  {/* Gradient number – Poppins 900 */}
+                  <div className="gradient-text hero-stat-number">{num}</div>
+                  {/* Stat label – Roboto 500 */}
+                  <div className="hero-stat-label">{label}</div>
                 </div>
               ))}
             </motion.div>
@@ -123,7 +123,7 @@ export default function Hero() {
             style={{ display: 'flex', justifyContent: 'center', position: 'relative', marginTop: -150 }}>
 
             {/* Pulse rings – three concentric fading circles that animate outward */}
-            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 360, height: 360 }}>
+            <div className="hero-rings" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 360, height: 360 }}>
               {[1, 1.3, 1.6].map((scale, i) => (
                 <div key={i} style={{
                   position: 'absolute', inset: 0, borderRadius: '50%',
@@ -146,6 +146,7 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, -14, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="hero-image-wrap"
               style={{
                 position: 'relative', width: 300, height: 300, borderRadius: '50%', overflow: 'hidden',
                 border: '5px solid white', boxShadow: '0 20px 60px rgba(79,70,229,0.25)',
@@ -159,18 +160,18 @@ export default function Hero() {
 
             {/* Top-right card: Fast Delivery badge */}
             <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.2, type: 'spring' }}
-              className="glass"
+              className="glass hero-float-card"
               style={{ position: 'absolute', top: '0%', right: '0%', borderRadius: 16, padding: '12px 18px', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }}>
-              <div style={{ fontWeight: 700, fontSize: 13, color: '#4F46E5', display: 'flex', alignItems: 'center', gap: 4 }}><Rocket size={14} /> Fast Delivery</div>
-              <div style={{ fontSize: 12, color: '#6B7280', marginTop: 2 }}>On time, every time</div>
+              <div className="float-card-title" style={{ color: '#4F46E5' }}><Rocket size={14} /> Fast Delivery</div>
+              <div className="float-card-sub">On time, every time</div>
             </motion.div>
 
             {/* Bottom-left card: 5-star rating badge */}
             <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.4, type: 'spring' }}
-              className="glass"
+              className="glass hero-float-card"
               style={{ position: 'absolute', bottom: '0%', left: '0%', borderRadius: 16, padding: '12px 18px', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }}>
-              <div style={{ fontWeight: 700, fontSize: 13, color: '#FF6B35', display: 'flex', alignItems: 'center', gap: 4 }}><Star size={14} /> 5.0 Rating</div>
-              <div style={{ fontSize: 12, color: '#6B7280', marginTop: 2 }}>Trusted by 50+ clients</div>
+              <div className="float-card-title" style={{ color: '#FF6B35' }}><Star size={14} /> 5.0 Rating</div>
+              <div className="float-card-sub">Trusted by 50+ clients</div>
             </motion.div>
           </motion.div>
         </div>
@@ -184,8 +185,8 @@ export default function Hero() {
         {/* Outer bounce animation wrapping both label and mouse icon */}
         <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 1.5, repeat: Infinity }}
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
-          {/* "Scroll down" label */}
-          <div style={{ fontSize: 12, color: '#9CA3AF', fontWeight: 500 }}>Scroll down</div>
+          {/* "Scroll down" label – Roboto 500 */}
+          <div className="scroll-label">Scroll down</div>
           {/* Mouse-shaped border */}
           <div style={{ width: 22, height: 36, border: '2px solid #9CA3AF', borderRadius: 11, display: 'flex', justifyContent: 'center', paddingTop: 6 }}>
             {/* Animated scroll dot inside the mouse icon */}

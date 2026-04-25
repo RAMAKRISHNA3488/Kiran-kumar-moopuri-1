@@ -18,7 +18,7 @@ export default function Hero() {
 
   return (
     // Main hero section — full viewport height, gradient background, overflow hidden for decorative elements
-    <section id="hero" className="hero-bg" style={{ minHeight: '100vh', paddingTop: 'clamp(72px, 12vw, 100px)', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
+    <section id="hero" className="hero-bg" style={{ minHeight: '100vh', paddingTop: 'clamp(16px, 3vw, 32px)', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
 
       {/* ── Decorative Background Layer ────────────────────────────
           Contains blurred radial gradient blobs and a dotted grid.
@@ -38,7 +38,7 @@ export default function Hero() {
           Two-column grid (left: text content, right: image).
           Collapses to single column on tablet/mobile via .hero-grid media query. */}
       <div className="container" style={{ padding: '60px 0', width: '100%' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="hero-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(24px, 4vw, 64px)', alignItems: 'center' }} className="hero-grid">
 
           {/* ── LEFT COLUMN: Text Content ────────────────────────── */}
           <motion.div initial={{ x: -60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.8 }} style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
@@ -120,7 +120,7 @@ export default function Hero() {
 
           {/* ── RIGHT COLUMN: Hero Image with Decorative Rings ───── */}
           <motion.div initial={{ x: 60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }}
-            style={{ display: 'flex', justifyContent: 'center', position: 'relative', marginTop: -150 }}>
+            style={{ display: 'flex', justifyContent: 'center', position: 'relative', marginTop: -80 }}>
 
             {/* Pulse rings – three concentric fading circles that animate outward */}
             <div className="hero-rings" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 360, height: 360 }}>

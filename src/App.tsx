@@ -129,7 +129,7 @@ function App() {
           {/* AI Chat Assistant – floating button bottom-right */}
           <AIAssistant />
 
-          {/* Floating WhatsApp Button – bottom-left, links to WhatsApp chat */}
+          {/* Floating WhatsApp Button – top-right, above AI assistant */}
           <motion.a
             href="https://wa.me/919380202408"
             target="_blank"
@@ -139,7 +139,7 @@ function App() {
             whileHover={{ scale: 1.1, y: -5 }}
             whileTap={{ scale: 0.9 }}
             style={{
-              position: 'fixed', bottom: 30, left: 30,
+              position: 'fixed', bottom: 110, right: 30,
               width: 60, height: 60, borderRadius: '50%',
               background: '#25D366', color: 'white',
               display: 'flex', alignItems: 'center', justifyContent: 'center',

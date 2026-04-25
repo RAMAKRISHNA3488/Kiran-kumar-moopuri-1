@@ -76,14 +76,15 @@ const DotField = memo(({
     }
 
     function doResize() {
-      const rect = canvas.parentElement!.getBoundingClientRect();
+      const c    = canvas!;   // safe: outer guard ensures canvas is non-null
+      const rect = c.parentElement!.getBoundingClientRect();
       const w = rect.width;
       const h = rect.height;
 
-      canvas.width  = w * dpr;
-      canvas.height = h * dpr;
-      canvas.style.width  = `${w}px`;
-      canvas.style.height = `${h}px`;
+      c.width  = w * dpr;
+      c.height = h * dpr;
+      c.style.width  = `${w}px`;
+      c.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       sizeRef.current = { w, h, offsetX: rect.left + window.scrollX, offsetY: rect.top + window.scrollY };

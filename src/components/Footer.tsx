@@ -9,7 +9,7 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
-import DotField from './DotField';
+import DotGrid from './DotGrid';
 
 // Quick navigation links shown in the footer
 const quickLinks = ['Home', 'Services', 'My Portfolio', 'About', 'Contact'];
@@ -26,11 +26,11 @@ const legalLinks = [
 
 // Social media platforms with icon, label, and brand color
 const socials = [
-  { icon: FaFacebook,  label: 'Facebook',  color: '#1877F2' },
-  { icon: FaTwitter,   label: 'Twitter',   color: '#1DA1F2' },
+  { icon: FaFacebook, label: 'Facebook', color: '#1877F2' },
+  { icon: FaTwitter, label: 'Twitter', color: '#1DA1F2' },
   { icon: FaInstagram, label: 'Instagram', color: '#E4405F' },
-  { icon: FaLinkedin,  label: 'LinkedIn',  color: '#0A66C2' },
-  { icon: FaYoutube,   label: 'YouTube',   color: '#FF0000' },
+  { icon: FaLinkedin, label: 'LinkedIn', color: '#0A66C2' },
+  { icon: FaYoutube, label: 'YouTube', color: '#FF0000' },
 ];
 
 export default function Footer() {
@@ -43,21 +43,17 @@ export default function Footer() {
       {/* Top gradient accent bar */}
       <div style={{ height: 4, background: 'linear-gradient(90deg, #FF6B35, #7C3AED)', position: 'absolute', top: 0, left: 0, right: 0, zIndex: 2 }} />
 
-      {/* DotField – cursor-reactive animated dot canvas covering the full footer */}
+      {/* DotGrid – interactive dot canvas with proximity glow & click shockwave */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        <DotField
-          dotRadius={1.5}
-          dotSpacing={14}
-          bulgeStrength={67}
-          glowRadius={160}
-          sparkle={false}
-          waveAmplitude={0}
-          cursorRadius={500}
-          cursorForce={0.1}
-          bulgeOnly={true}
-          gradientFrom="#A855F7"
-          gradientTo="#B497CF"
-          glowColor="#120F17"
+        <DotGrid
+          dotSize={3}
+          gap={18}
+          baseColor="#2A2237"
+          activeColor="#A855F7"
+          proximity={130}
+          shockRadius={260}
+          shockStrength={4}
+          returnDuration={1.2}
         />
       </div>
 
@@ -165,9 +161,9 @@ export default function Footer() {
             <h4 style={{ fontFamily: 'sans-serif', fontWeight: 700, fontSize: 16, marginBottom: 24, color: 'white' }}>Contact</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
               {[
-                { icon: Phone,  val: '+91 98765 43210'                   },
-                { icon: Mail,   val: 'hello@klanvision.com'              },
-                { icon: MapPin, val: 'Anantapur, Andhra Pradesh, India'  },
+                { icon: Phone, val: '+91 98765 43210' },
+                { icon: Mail, val: 'hello@klanvision.com' },
+                { icon: MapPin, val: 'Anantapur, Andhra Pradesh, India' },
               ].map(c => (
                 <div key={c.val} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   {/* Orange icon badge */}

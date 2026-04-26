@@ -382,6 +382,37 @@ p {
   color: #9CA3AF;
 }
 
+/* Gradient text on "Scroll down" label */
+.scroll-label-gradient {
+  background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600 !important;
+}
+
+/* Mouse shape with gradient border */
+.scroll-mouse {
+  width: 22px;
+  height: 36px;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(180deg, #6366f1, #a855f7, #ec4899, #f97316) border-box;
+  border: 2px solid transparent;
+}
+
+/* Gradient dot inside the mouse shape */
+.scroll-dot {
+  width: 4px;
+  height: 8px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #6366f1, #ec4899, #f97316);
+}
+
 /* ===== SERVICE CARD ICON ===== */
 .icon-wrap {
   width: 56px;

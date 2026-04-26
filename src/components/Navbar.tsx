@@ -9,13 +9,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Navigation items – label shown in nav, id used for scrollTo target
 const navItems = [
-  { label: 'HOME',         id: 'hero'         },
-  { label: 'SERVICES',     id: 'services'     },
-  { label: 'PORTFOLIO',    id: 'portfolio'    },
-  { label: 'TESTIMONIALS', id: 'testimonials' },
-  { label: 'BLOG',         id: 'blog'         },
-  { label: 'ABOUT',        id: 'about'        },
-  { label: 'CONTACT',      id: 'contact'      },
+  { label: 'HOME',      id: 'hero'      },
+  { label: 'SERVICES',  id: 'services'  },
+  { label: 'PORTFOLIO', id: 'portfolio' },
+  { label: 'BLOG',      id: 'blog'      },
+  { label: 'ABOUT',     id: 'about'     },
+  { label: 'CONTACT',   id: 'contact'   },
+  { label: 'CAREERS',   id: 'careers'   },
 ];
 
 export default function Navbar() {
@@ -126,7 +126,7 @@ export default function Navbar() {
       >
         {/* White pill container */}
         <div style={{
-          width: '100%', maxWidth: 1200,
+          width: '100%', maxWidth: 1280,
           background: 'white',
           borderRadius: 40,
           boxShadow: '0 10px 30px rgba(0,0,0,0.1)',

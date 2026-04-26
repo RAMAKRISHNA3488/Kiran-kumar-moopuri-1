@@ -120,7 +120,7 @@ const SvgDelivery = () => (
 );
 
 // ── Icon Map ─────────────────────────────────────────────────
-const iconMap: Record<string, () => JSX.Element> = {
+const iconMap: Record<string, () => React.ReactElement> = {
   'E-Commerce Platform': SvgEcommerce,
   'HealthCare Mobile App': SvgHealthcare,
   'Brand SEO Campaign': SvgSEO,
